@@ -11,7 +11,7 @@ const hostUrl = 'https://data.nasa.gov/resource/gh4g-9sfh.json';
 const fetchMeteorites = () => ({ type: FETCH_METEORITES })
 const fetchMeteoritesSuccess = data => ({ type: FETCH_METEORITES_SUCCESS, data });
 const search = data => ({ type: SEARCH_RESULTS, data });
-const fetchMeteoritesError = (books) => ({ type: FETCH_METEORITES_ERROR })
+const fetchMeteoritesError = () => ({ type: FETCH_METEORITES_ERROR })
 
 export const fetchAllMeteorites = () => async (dispatch) => {
   dispatch(fetchMeteorites()); 

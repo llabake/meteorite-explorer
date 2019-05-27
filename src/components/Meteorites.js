@@ -16,22 +16,26 @@ export default connect(state => ({
 	searchResults: state.meteorites.searchResults,
 	loading: state.meteorites.loading
 	}))(({ meteorites, searchResults, loading }) => {
-  const data = searchResults || meteorites;
+	const data = searchResults || meteorites;
   return (
 		<div>
-			<table id="meteorite-table">
-				<MeteoriteHeader />
-				<HashLoader
-          css={override}
-          sizeUnit={"px"}
-          size={50}
-          color={'#4A4A4A'}
-          loading={loading}
-        />
-				{
-					data.map(meteorite => (<Meteorite key={meteorite.id} meteorite={meteorite} />))
-				}
-		</table>
+			{ !loading ?
+				data && data.length ?
+					<table id="meteorite-table">
+						<MeteoriteHeader />
+						<HashLoader
+							css={override}
+							sizeUnit={"px"}
+							size={50}
+							color={'#4A4A4A'}
+							loading={loading}
+						/>
+						{
+							data.map(meteorite => (<Meteorite key={meteorite.id} meteorite={meteorite} />))
+						}
+					</table> :
+				<p> No meteorite matches your search....try some other words</p> : ''
+			}
 	</div>
   );
 });
