@@ -5,9 +5,87 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: black;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+
+
+.header {
+  text-align: center;
+  color: rgb(222, 225, 233);
+  height: 50px;
+  font-size: 40px;
+  border-top: 2px solid #D7D8DB;
+  border-bottom: 2px solid #D7D8DB;
+}
+
+.main {
+  background-color: #36CCD7;
+}
+
+.table-header {
+  background-color: yellowgreen;
+  text-align: center;
+}
+
+form {
+  text-align: center;
+  margin-top: 12px;
+  margin-bottom: 12px;
+
+}
+
+form input[type=text] {
+  padding: 10px;
+  font-size: 17px;
+  border: 1px solid grey;
+  float: left;
+  width: 60%;
+  background: #f1f1f1;
+}
+
+form input[type=submit] {
+  width: 10%;
+  padding: 10px;
+  background: #2196F3;
+  color: white;
+  font-size: 17px;
+  border: 1px solid grey;
+  border-left: none;
+  cursor: pointer;
+}
+
+form input[type=text]:hover {
+  background: #0b7dda;
+}
+
+/* Clear floats */
+form::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+  width: 100%;
+}
+th, td {
+  padding: 15px;
+  text-align: left;
+}
+table#meteorite-table tr:nth-child(even) {
+  background-color: #eee;
+}
+table#meteorite-table tr:nth-child(odd) {
+ background-color: #fff;
+}
+table#meteorite-table th {
+  background-color: black;
+  color: white;
 }
